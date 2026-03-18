@@ -1,0 +1,20 @@
+# The Krakens – Project Concepts
+
+This document explains the concepts learned and applied while building each feature of the project.
+
+| Feature | Concept Applied | Explanation |
+|---|---|---|
+| Landing Page Video Background | HTML5 `<video>` Element | Used the `<video>` tag with `autoplay`, `muted`, and `loop` attributes to display a full-screen background video, learning how to layer HTML elements using CSS `position: absolute` and `z-index`. |
+| Depth Scroll Tracker | JavaScript DOM Manipulation & Scroll Events | Used `addEventListener('scroll', ...)` on the container element to listen for scroll events and dynamically update the depth display text. Learned how to calculate scroll position relative to a section's offset to map it to a depth range. |
+| Ocean Zone Navigation (Depth Scale) | JavaScript `querySelectorAll` & `classList.toggle` | Used `querySelectorAll` to select all zone list items and `classList.toggle` to highlight the currently active zone as the user scrolls. Also attached `click` event listeners to each item to enable smooth-scroll navigation to the corresponding section. |
+| Smooth Scrolling | JavaScript `scrollIntoView` API | Applied `element.scrollIntoView({ behavior: 'smooth' })` to create smooth animated scrolling when the user clicks "Dive Deeper" or a depth-scale zone, replacing the default instant jump. |
+| Depth Calculation | JavaScript Arrow Functions & Math | Wrote a pure arrow function `calculateDepth` that uses proportional math (`scrollFraction * (rangeMax - rangeMin)`) to convert a scroll position into a realistic ocean depth value, practicing functional programming and `Math.round`/`Math.min`/`Math.max`. |
+| Modal Image Viewer | JavaScript Conditional DOM Manipulation | Implemented a modal (popup) that opens when a scroll-triggered image is clicked and closes when the close button or the modal backdrop is clicked. Learned to check `event.target === modal` to detect outside-click dismissal. |
+| Login Form | HTML Forms & CSS Styling | Built a login form using `<input type="text">` and `<input type="password">` elements, applying CSS flexbox and custom fonts to create a visually appealing, centred card layout over a video background. |
+| Show/Hide Password Toggle | JavaScript DOM Events & `ion-icon` | Used an `<ion-icon>` toggle paired with a JavaScript click handler to switch the password input between `type="password"` and `type="text"`, learning how to manipulate input attributes dynamically. |
+| QR Code Scan Animation | CSS `@keyframes` & `::before`/`::after` Pseudo-elements | Created a realistic scanning-line animation using only CSS pseudo-elements (`::before` and `::after`) and `@keyframes`, learning how to animate `height` and `top` properties for visual effects without JavaScript. |
+| Responsive Layout | CSS Media Queries | Used `@media (max-width: 768px)` rules to adjust font sizes, flex directions, and padding for smaller screens, learning the fundamentals of mobile-first and responsive web design. |
+| Custom Fonts | CSS `@font-face` | Loaded custom `.ttf` font files (Astroz Trial, Paraoh, Race Sport, Sakana) using `@font-face` declarations and applied them via `font-family`, understanding how to self-host web fonts. |
+| Multi-page Navigation | HTML Anchor Links & Relative Paths | Linked all pages (Home, Realms, Kraken Kins, Login, Support, Wiki) using `<a href="...">` tags with relative file paths, learning how to structure a multi-page static website. |
+| Wiki / Information Page | CSS Animations (`fadeIn`) | Applied a staggered `fadeIn` CSS animation using `animation-delay` on successive `<section>` elements so content appears sequentially as the page loads, practicing keyframe animations and `opacity`/`transform` transitions. |
+| Donate / Support Page | CSS `box-shadow` & `filter` (Glow Effects) | Used `filter: drop-shadow(...)` and `box-shadow` to add neon glow effects to the scanning line and text, learning the difference between `filter: drop-shadow` and `box-shadow` for non-rectangular elements. |
